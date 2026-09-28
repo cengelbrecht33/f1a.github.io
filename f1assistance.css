@@ -1,0 +1,350 @@
+/* version#: 2026.09.17 */
+
+:root {
+	--nav: navy;
+	--nav-hover: #0033cc;
+	--accent: #0a7a0a;
+	--text: #111;
+	--bg: #fff;
+	--link: navy;
+	--content-width: 60rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	margin: 0 auto;
+	padding: 1rem;
+	max-width: var(--content-width);
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+	line-height: 1.45;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.skip-link {
+	position: absolute;
+	left: -999px;
+	top: 0;
+	background: var(--nav);
+	color: #fff;
+	padding: 0.5rem 1rem;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	left: 1rem;
+}
+
+.site-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 1rem;
+	margin-bottom: 1.25rem;
+}
+
+.logo-link {
+	display: inline-block;
+}
+
+.logo {
+	display: block;
+	width: 300px;
+	height: 92px;
+	max-width: 100%;
+}
+
+.remote-link {
+	margin-left: auto;
+}
+
+.remote-link img {
+	display: block;
+	width: 66px;
+	height: 66px;
+}
+
+.site-header nav {
+	flex: 1 1 100%;
+}
+
+.site-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav > li {
+	position: relative;
+	min-width: 8.5rem;
+	background-color: var(--nav);
+}
+
+.site-nav > li > a,
+.site-nav .nav-label {
+	display: block;
+	color: #fff;
+	text-align: center;
+	line-height: 1.75rem;
+	text-decoration: none;
+	padding: 0 0.5rem;
+	font-size: 0.75rem;
+}
+
+.site-nav button.nav-label {
+	width: 100%;
+	border: 0;
+	background: transparent;
+	appearance: none;
+	font-family: inherit;
+	font-size: 0.75rem;
+	font-weight: inherit;
+	line-height: 1.75rem;
+	color: #fff;
+	cursor: pointer;
+}
+
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a[aria-current="page"] {
+	background-color: var(--nav-hover);
+}
+
+.site-nav a:focus-visible,
+.site-nav button.nav-label:focus-visible {
+	outline: 2px solid #fff;
+	outline-offset: -2px;
+}
+
+.nav-caret {
+	font-size: 0.85em;
+}
+
+.submenu {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 10;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	min-width: 100%;
+}
+
+.submenu li {
+	background-color: var(--nav);
+}
+
+.submenu a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	font-size: 0.75rem;
+	line-height: 1.75rem;
+	padding: 0 0.5rem;
+	white-space: nowrap;
+}
+
+.site-nav > li:hover > .submenu,
+.site-nav > li:focus-within > .submenu {
+	display: block;
+}
+
+main a {
+	color: var(--link);
+	text-decoration: underline;
+}
+
+main a:hover,
+main a:focus {
+	color: var(--nav-hover);
+}
+
+h1 {
+	font-weight: bold;
+	text-align: center;
+	text-shadow: -3px 5px rgb(195, 225, 254);
+	margin: 0.75rem 0 1rem;
+}
+
+h2 {
+	text-align: center;
+	font-weight: bold;
+	margin: 1.25rem 0 0.75rem;
+}
+
+h3 {
+	margin: 1.25rem 0 0.5rem;
+}
+
+.tagline {
+	color: var(--accent);
+	text-align: center;
+	font-size: 1.125rem;
+	font-weight: bold;
+	margin: 1rem 0;
+}
+
+.quote {
+	font-style: italic;
+	text-align: center;
+	margin: 1rem 0;
+}
+
+p {
+	margin: 0.5rem 0 1rem;
+}
+
+.lede {
+	text-align: center;
+}
+
+ul.plain-list {
+	margin: 0.5rem auto 1.25rem;
+	padding-left: 1.25rem;
+	max-width: 36rem;
+}
+
+ul.plain-list.centered {
+	list-style: none;
+	padding-left: 0;
+	text-align: center;
+}
+
+.split-lists {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem 3rem;
+	max-width: 40rem;
+	margin: 1rem auto;
+}
+
+.split-lists h2 {
+	margin-top: 0;
+	font-size: 1.1rem;
+}
+
+.split-lists ul {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.table-wrap {
+	overflow-x: auto;
+	margin: 1rem 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.85rem;
+}
+
+th,
+td {
+	border: 1px solid #333;
+	padding: 0.25rem 0.4rem;
+	vertical-align: top;
+	text-align: left;
+}
+
+.hero-image {
+	display: block;
+	margin: 1rem auto;
+}
+
+.contact-block {
+	display: block;
+	text-align: center;
+	font-style: normal;
+	font-size: 1.15rem;
+	line-height: 1.8;
+	margin: 1.5rem 0;
+}
+
+.power-pos {
+	color: #0033cc;
+	font-weight: bold;
+}
+
+.power-neg {
+	color: #b00000;
+	font-weight: bold;
+}
+
+.faq-toc ul {
+	margin: 0 0 1.5rem;
+	padding-left: 1.25rem;
+}
+
+.jump-top {
+	text-align: center;
+	margin: 2rem 0 1rem;
+}
+
+.site-footer {
+	border-top: 1px solid #ccc;
+	margin-top: 2rem;
+	padding-top: 0.75rem;
+	text-align: center;
+	font-size: 0.7rem;
+}
+
+.site-footer p {
+	margin: 0.25rem 0;
+}
+
+.note {
+	font-style: italic;
+}
+
+@media (max-width: 700px) {
+	body {
+		padding: 0.75rem;
+	}
+
+	.site-nav {
+		flex-direction: column;
+	}
+
+	.site-nav > li {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.submenu {
+		position: static;
+	}
+
+	.split-lists {
+		grid-template-columns: 1fr;
+	}
+
+	.logo {
+		width: auto;
+		height: auto;
+		max-height: 92px;
+	}
+}
+
+/* Galactic Copyright 2003 - 2027 F1 Assistance All Rights Reserved. */
